@@ -1,0 +1,13 @@
+
+<aside
+  class="fixed top-18 w-60 bg-gray-300 h-screen min-h-[calc(100vh_-_4rem)] "
+>
+  <ul class=" ">
+    <li [routerLink]="'/'" class="pt-1 pb-4 pl-5 pt-5 cursor-pointer text-black-600" routerLinkActive="bg-gray-200 border-1-4 border-white-500 font-bold" [routerLinkActiveOptions]="{exact:true}" >All tasks</li>
+    <hr />
+    <li [routerLink]="'/important'" class="pb-4 pl-5 pt-5 cursor-pointer text-black-600" routerLinkActive="bg-gray-200 border-1-4 border-white-500 font-bold">Important tasks</li>
+    <hr />
+    <li [routerLink]="'/completed'" class="pb-4 pl-5 pt-5 cursor-pointer text-black-600" routerLinkActive="bg-gray-200 border-1-4 border-white-500 font-bold">Completed tasks</li>
+    <hr />
+  </ul>
+</aside>
