@@ -20,16 +20,19 @@ export class AllTaskComponent {
   }
 
   addTask(){
+
     console.log(this.newTask)
     this.httpService.addTask(this.newTask).subscribe(()=>{
       console.log('added')
+
       this.newTask=""
       this.getAllTask()
     })
   }
   getAllTask(){
+
     this.httpService.getAllTask().subscribe((result:any)=>{
-      console.log(result)
+
       this.takeList=result
 
     })

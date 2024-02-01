@@ -8,14 +8,15 @@
       placeholder="enter your task"
       [(ngModel)]="newTask"
       (keydown.enter)="addTask()"
+      
     />
 
   </div>
   <div class="flex mt-6 flex-col">
     <h1 class="font-bold mb-2">Your Tasks</h1>
-    <div class="w-full bg-white px-4 py-2 rounded ">
+    <div class="w-full bg-white px-4 py-2 rounded  min-h-[50px]">
         @for(task of takeList; track task){
-            <p class="items-center mt-2 mb-2">{{task.title}}</p>
+            <p class="items-center mt-2 mb-2 p-5 border">{{task.title}}</p>
         }
     </div>
   </div>
