@@ -1,1 +1,7 @@
-<p>important-task works!</p>
+<app-page-title></app-page-title>
+
+
+  <div class="flex mt-6 flex-col">
+    <h1 class="font-bold mb-2">Your Tasks</h1>
+  <app-task-list [taskList] = "taskList"  (complete)="onComplete($event)" (important)="onImportant($event)" (delete)="onDelete($event)"></app-task-list>
+  </div>
