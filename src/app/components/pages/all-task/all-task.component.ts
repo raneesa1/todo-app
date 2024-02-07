@@ -37,20 +37,44 @@ export class AllTaskComponent {
     this.getAllTask()
   }
 
+  editTask : any = null
+  onEdit(task:any){
+    this.editTask = task
+    this.newTask = task.title
+  }
   addTask(){
+    if(this.editTask){
+    if(this.newTask.trim() === ''){
+      return alert('please enter you task')
+    }
 
+      this.editTask.title = this.newTask
+      this.httpService.updateTask(this.editTask).subscribe(()=>{
+        this.getAllTask()
+        this.editTask = null
+        this.newTask = ''
+        
+      })
+    }else{
+    
+
+    if(this.newTask.trim() === ''){
+      alert('please enter your task')
+    }else{
+
+   
     console.log(this.newTask)
     this.httpService.addTask(this.newTask).subscribe(()=>{
       console.log('added')
-
       this.newTask=""
       this.getAllTask()
     })
   }
+}
+  }
   getAllTask(){
 
     this.httpService.getAllTask().subscribe((result:any)=>{
-
       this.intialTaskList=this.taskList=result
 
     })

@@ -30,11 +30,9 @@ markDeleted(task:any){
   console.log('clicked deleted')
   this.delete.emit(task)
 }
-// editTask(task:any){
-//   console.log('clicked edit')
-//    this.edit.emit(task);
-  
-// }
+markEdit(task:any){
+  this.edit.emit(task)
+}
 
 
 }

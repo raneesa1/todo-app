@@ -19,6 +19,7 @@ export class CompletedTaskComponent {
     this.getAllTask()
   }
 
+  
  
   getAllTask(){
 
@@ -32,7 +33,7 @@ export class CompletedTaskComponent {
   onComplete(task:any){
     task.completed = !task.completed
     this.httpService.updateTask(task).subscribe(()=>{
-      this.getAllTask() 
+      this.getAllTask()
     })
   }
 
